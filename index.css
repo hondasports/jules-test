@@ -1,0 +1,58 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top for Tetris board */
+  min-height: 100vh;
+  background-color: #222; /* Darker background for Tetris */
+  color: #fff;
+}
+
+#root {
+  display: flex;
+  flex-direction: column; /* Stack game elements vertically */
+  align-items: center;
+}
+
+/* Tetris Board styles */
+.tetris-board {
+  display: grid;
+  /* Dynamically set by JS based on board dimensions, but good to have a fallback */
+  /* grid-template-rows: repeat(20, 20px); */
+  /* grid-template-columns: repeat(10, 20px); */
+  grid-gap: 1px;
+  border: 2px solid #777;
+  background-color: #111; /* Background for the grid gaps */
+  /* Fixed size for now, can be made responsive later */
+  /* width: calc(10 * 20px + 9 * 1px + 4px);
+  height: calc(20 * 20px + 19 * 1px + 4px); */
+}
+
+/* Cell styles (replaces .square) */
+.cell {
+  /* width and height will be set by grid-template-columns/rows on the board */
+  /* background-color will be set by inline style from Cell component */
+  border: 1px solid #000; /* Optional: border for empty cells if color is transparent */
+}
+
+/* Status and other game info styling */
+.game-info {
+  margin-left: 20px; /* If we add side panel for score/next piece */
+  font-size: 18px;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Styles for the main game container (if any) */
+.game {
+  display: flex; /* Arrange board and info side-by-side if needed */
+  align-items: flex-start;
+}
+
+/* Removed .board-row and .square:focus as they are Tic-Tac-Toe specific */
